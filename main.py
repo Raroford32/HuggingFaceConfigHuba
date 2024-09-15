@@ -1,75 +1,48 @@
 from flask import Flask, render_template, request, jsonify
 from flask_socketio import SocketIO, emit
 from config import Config
-from models import db, Server, Model
-from forms import ServerForm, ModelForm
-from utils import generate_workspace_command, configure_tgi
+from utils import generate_workspace_command
+import subprocess
 
 app = Flask(__name__)
 app.config.from_object(Config)
-db.init_app(app)
-socketio = SocketIO(app)
-
-with app.app_context():
-    db.create_all()
+socketio = SocketIO(app, cors_allowed_origins="*", ping_timeout=20, ping_interval=15)
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/servers', methods=['GET', 'POST'])
-def servers():
-    form = ServerForm()
-    if form.validate_on_submit():
-        server_id, workspace_command = generate_workspace_command()
-        server = Server(
-            name=form.name.data,
-            server_id=server_id,
-            workspace_command=workspace_command
-        )
-        db.session.add(server)
-        db.session.commit()
-        return jsonify({'success': True, 'message': 'Server added successfully', 'server': server.to_dict()})
+@app.route('/generate_command', methods=['POST'])
+def generate_command():
+    model_name = request.form.get('model_name')
+    if not model_name:
+        return jsonify({'success': False, 'message': 'Model name is required'})
     
-    servers = Server.query.all()
-    return jsonify({'servers': [server.to_dict() for server in servers]})
-
-@app.route('/models', methods=['GET', 'POST'])
-def models():
-    form = ModelForm()
-    if form.validate_on_submit():
-        model = Model(
-            name=form.name.data,
-            huggingface_id=form.huggingface_id.data
-        )
-        db.session.add(model)
-        db.session.commit()
-        return jsonify({'success': True, 'message': 'Model added successfully'})
-    
-    models = Model.query.all()
-    return jsonify({'models': [model.to_dict() for model in models]})
+    connection_command = generate_workspace_command(model_name)
+    return jsonify({'success': True, 'command': connection_command})
 
 @socketio.on('connect')
 def handle_connect():
     emit('connection_response', {'data': 'Connected'})
 
-@socketio.on('configure_tgi')
-def handle_configure_tgi(data):
-    server_id = data['server_id']
-    model_id = data['model_id']
-    
-    server = Server.query.filter_by(server_id=server_id).first()
-    model = Model.query.get(model_id)
-    
-    if not server or not model:
-        emit('configuration_response', {'success': False, 'message': 'Invalid server or model'})
+@socketio.on('start_tgi_server')
+def handle_start_tgi_server(data):
+    model_name = data.get('model_name')
+    if not model_name:
+        emit('tgi_server_response', {'success': False, 'message': 'Model name is required'})
         return
-    
+
+    command = generate_workspace_command(model_name)
     try:
-        tgi_address, repair_log = configure_tgi(request.sid, model)
-        emit('configuration_response', {'success': True, 'tgi_address': tgi_address, 'repair_log': repair_log})
+        # Start the TGI server process
+        process = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        emit('tgi_server_response', {'success': True, 'message': 'TGI server starting'})
     except Exception as e:
-        emit('configuration_response', {'success': False, 'message': f'Configuration failed: {str(e)}'})
+        emit('tgi_server_response', {'success': False, 'message': f'Failed to start TGI server: {str(e)}'})
+
+@socketio.on('server_info')
+def handle_server_info(data):
+    emit('server_info', data, broadcast=True)
 
 if __name__ == '__main__':
     socketio.run(app, host='0.0.0.0', port=5000, allow_unsafe_werkzeug=True)

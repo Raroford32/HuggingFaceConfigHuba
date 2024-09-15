@@ -1,0 +1,44 @@
+09-15 17:50:46
+return connection._execute_clauseelement(
+09-15 17:50:46
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+09-15 17:50:46
+File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+09-15 17:50:46
+ret = self._execute_context(
+09-15 17:50:46
+^^^^^^^^^^^^^^^^^^^^^^
+09-15 17:50:46
+File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+09-15 17:50:46
+return self._exec_single_context(
+09-15 17:50:46
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+09-15 17:50:46
+File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+09-15 17:50:46
+self._handle_dbapi_exception(
+09-15 17:50:46
+File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+09-15 17:50:46
+cursor.execute(statement, parameters)
+09-15 17:50:46
+[SQL: SELECT server.id AS server_id, server.name AS server_name, server.workspace_command AS server_workspace_command, server.connected AS server_connected, server.server_info AS server_server_info
+09-15 17:53:23
+127.0.0.1 - - [15/Sep/2024 14:23:23] "GET /socket.io/?EIO=4&transport=websocket&sid=dVqBdcDxYKZyy4X3AAAG HTTP/1.1" 200 -
+09-15 17:53:26
+127.0.0.1 - - [15/Sep/2024 14:23:26] "GET /socket.io/?EIO=4&transport=polling&t=P7s4IW8 HTTP/1.1" 200 -
+09-15 17:53:26
+127.0.0.1 - - [15/Sep/2024 14:23:26] "POST /socket.io/?EIO=4&transport=polling&t=P7s4Iea&sid=L1dc-SH8wGh2V1qAAAAE HTTP/1.1" 200 -
+09-15 17:53:26
+127.0.0.1 - - [15/Sep/2024 14:23:26] "GET /socket.io/?EIO=4&transport=polling&t=P7s4Ieb&sid=L1dc-SH8wGh2V1qAAAAE HTTP/1.1" 200 -
+09-15 17:53:27
+127.0.0.1 - - [15/Sep/2024 14:23:27] "GET /socket.io/?EIO=4&transport=polling&t=P7s4Ik4&sid=L1dc-SH8wGh2V1qAAAAE HTTP/1.1" 200 -
+09-15 17:53:27
+127.0.0.1 - - [15/Sep/2024 14:23:27] "GET /socket.io/?EIO=4&transport=polling&t=P7s4Isa&sid=L1dc-SH8wGh2V1qAAAAE HTTP/1.1" 200 -
+09-15 17:53:51
+system: received signal terminated
+09-15 17:53:51
+command finished with error [sh -c python main.py]: signal: terminated
+09-15 17:53:51
+main done, exiting

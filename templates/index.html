@@ -12,36 +12,22 @@
         <h1>Hugging Face TGI Workspace</h1>
     </header>
     <main>
-        <section id="servers">
-            <h2>Servers</h2>
-            <form id="server-form">
-                <input type="text" id="server-name" placeholder="Server Name" required>
-                <button type="submit">Add Server</button>
-            </form>
-            <ul id="server-list"></ul>
-        </section>
-        <section id="models">
-            <h2>Models</h2>
-            <form id="model-form">
-                <input type="text" id="model-name" placeholder="Model Name" required>
-                <input type="text" id="model-huggingface-id" placeholder="Hugging Face Model ID" required>
-                <button type="submit">Add Model</button>
-            </form>
-            <ul id="model-list"></ul>
-        </section>
         <section id="configuration">
-            <h2>Configure TGI</h2>
+            <h2>Configure TGI Server</h2>
             <form id="config-form">
-                <select id="server-select" required>
-                    <option value="">Select a server</option>
-                </select>
-                <select id="model-select" required>
-                    <option value="">Select a model</option>
-                </select>
-                <button type="submit">Configure and Launch</button>
+                <input type="text" id="model-name" placeholder="Enter Hugging Face Model Name" required>
+                <button type="submit">Generate Command</button>
             </form>
-            <div id="tgi-address"></div>
-            <div id="repair-log"></div>
+            <div id="connection-command"></div>
+            <button id="start-server-button" style="display: none;">Start TGI Server</button>
+        </section>
+        <section id="server-info">
+            <h2>Server Information</h2>
+            <div id="server-stats"></div>
+        </section>
+        <section id="tgi-status">
+            <h2>TGI Server Status</h2>
+            <div id="tgi-stats"></div>
         </section>
     </main>
     <script src="/static/js/main.js"></script>
