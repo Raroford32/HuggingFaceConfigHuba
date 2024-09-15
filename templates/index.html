@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face TGI Workspace</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Hugging Face TGI Workspace</h1>
+    </header>
+    <main>
+        <section id="servers">
+            <h2>Servers</h2>
+            <form id="server-form">
+                <input type="text" id="server-name" placeholder="Server Name" required>
+                <button type="submit">Add Server</button>
+            </form>
+            <ul id="server-list"></ul>
+        </section>
+        <section id="models">
+            <h2>Models</h2>
+            <form id="model-form">
+                <input type="text" id="model-name" placeholder="Model Name" required>
+                <input type="text" id="model-huggingface-id" placeholder="Hugging Face Model ID" required>
+                <button type="submit">Add Model</button>
+            </form>
+            <ul id="model-list"></ul>
+        </section>
+        <section id="configuration">
+            <h2>Configure TGI</h2>
+            <form id="config-form">
+                <select id="server-select" required>
+                    <option value="">Select a server</option>
+                </select>
+                <select id="model-select" required>
+                    <option value="">Select a model</option>
+                </select>
+                <button type="submit">Configure and Launch</button>
+            </form>
+            <div id="tgi-address"></div>
+            <div id="repair-log"></div>
+        </section>
+    </main>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

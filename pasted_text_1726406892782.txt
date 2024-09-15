@@ -1,0 +1,73 @@
+forwarding local port 5000 to external port 80
+command finished with error [sh -c python main.py]: exit status 1
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/main.py", line 75, in <module>
+    raise RuntimeError('The Werkzeug web server is not '
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/flask_socketio/__init__.py", line 646, in run
+RuntimeError: The Werkzeug web server is not designed to run in production. Pass allow_unsafe_werkzeug=True to the run() method to disable this error.
+Traceback (most recent call last):
+starting up user application
+    socketio.run(app, host='0.0.0.0', port=5000)
+command finished with error [sh -c python main.py]: exit status 1
+    raise RuntimeError('The Werkzeug web server is not '
+Traceback (most recent call last):
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/flask_socketio/__init__.py", line 646, in run
+    raise RuntimeError('The Werkzeug web server is not '
+    raise RuntimeError('The Werkzeug web server is not '
+    socketio.run(app, host='0.0.0.0', port=5000)
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/main.py", line 75, in <module>
+command finished with error [sh -c python main.py]: exit status 1
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/flask_socketio/__init__.py", line 646, in run
+command finished with error [sh -c python main.py]: exit status 1
+Traceback (most recent call last):
+Traceback (most recent call last):
+RuntimeError: The Werkzeug web server is not designed to run in production. Pass allow_unsafe_werkzeug=True to the run() method to disable this error.
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/main.py", line 75, in <module>
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/flask_socketio/__init__.py", line 646, in run
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/main.py", line 75, in <module>
+    socketio.run(app, host='0.0.0.0', port=5000)
+RuntimeError: The Werkzeug web server is not designed to run in production. Pass allow_unsafe_werkzeug=True to the run() method to disable this error.
+command finished with error [sh -c python main.py]: exit status 1
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/main.py", line 75, in <module>
+    socketio.run(app, host='0.0.0.0', port=5000)
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/flask_socketio/__init__.py", line 646, in run
+Traceback (most recent call last):
+    raise RuntimeError('The Werkzeug web server is not '
+RuntimeError: The Werkzeug web server is not designed to run in production. Pass allow_unsafe_werkzeug=True to the run() method to disable this error.
+    socketio.run(app, host='0.0.0.0', port=5000)
+RuntimeError: The Werkzeug web server is not designed to run in production. Pass allow_unsafe_werkzeug=True to the run() method to disable this error.
+RuntimeError: The Werkzeug web server is not designed to run in production. Pass allow_unsafe_werkzeug=True to the run() method to disable this error.
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/main.py", line 75, in <module>
+    raise RuntimeError('The Werkzeug web server is not '
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/flask_socketio/__init__.py", line 646, in run
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/main.py", line 75, in <module>
+    socketio.run(app, host='0.0.0.0', port=5000)
+Traceback (most recent call last):
+    raise RuntimeError('The Werkzeug web server is not '
+Traceback (most recent call last):
+    socketio.run(app, host='0.0.0.0', port=5000)
+RuntimeError: The Werkzeug web server is not designed to run in production. Pass allow_unsafe_werkzeug=True to the run() method to disable this error.
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/flask_socketio/__init__.py", line 646, in run
+command finished with error [sh -c python main.py]: exit status 1
+command finished with error [sh -c python main.py]: exit status 1
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/main.py", line 75, in <module>
+    raise RuntimeError('The Werkzeug web server is not '
+    socketio.run(app, host='0.0.0.0', port=5000)
+Traceback (most recent call last):
+RuntimeError: The Werkzeug web server is not designed to run in production. Pass allow_unsafe_werkzeug=True to the run() method to disable this error.
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/flask_socketio/__init__.py", line 646, in run
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/flask_socketio/__init__.py", line 646, in run
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/main.py", line 75, in <module>
+command finished with error [sh -c python main.py]: exit status 1
+    raise RuntimeError('The Werkzeug web server is not '
+command finished with error [sh -c python main.py]: exit status 1
+Traceback (most recent call last):
+RuntimeError: The Werkzeug web server is not designed to run in production. Pass allow_unsafe_werkzeug=True to the run() method to disable this error.
+    socketio.run(app, host='0.0.0.0', port=5000)
+    socketio.run(app, host='0.0.0.0', port=5000)
+RuntimeError: The Werkzeug web server is not designed to run in production. Pass allow_unsafe_werkzeug=True to the run() method to disable this error.
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/main.py", line 75, in <module>
+  File "/home/runner/6a630e65-fffa-4c0f-9b97-efc2c3b463a8/.pythonlibs/lib/python3.11/site-packages/flask_socketio/__init__.py", line 646, in run
+Traceback (most recent call last):
+command finished with error [sh -c python main.py]: exit status 1
+    raise RuntimeError('The Werkzeug web server is not '
+2024-09-15T13:23:30Z error: The deployment failed to initialize due to a configuration or code error. Check the logs tab for more information. For additional support, contact us at support@replit.com. 
